@@ -2,28 +2,31 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactStars from "react-rating-stars-component";
 
-const options = {
+
+
+const ProductCard = ({product}) => {
+
+  const options = {
     edit: false,
     color:"rgba(20,20,20,0.1)",
     activeColor:"tomato",
-    value:2.5,
+    value:product.ratings,
     isHalf:true,
     size: window.innerWidth < 800 ? 10: 17
 
 }
 
-const Product = ({product}) => {
   return (
-    <Link className="productCard" to={product._id}>
+    <Link className="productCard" to={`/product/${product._id}`}>
     <img src={product.images[0].url} alt={product.name} />
     <p>{product.name}</p>
     <div>
         <ReactStars {...options}/>
-         <span> (256 Reviews) </span>
+         <span> ({product.numOfReviews} Reviews) </span>
     </div>
-    <span>{product.price}</span>
+    <span>{`₹${product.price}`}</span>
     </Link>
   )
 }
 
-export default Product
+export default ProductCard;
