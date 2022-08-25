@@ -1,0 +1,148 @@
+.productsHeading{
+    margin: 2vmax auto;
+    width: 15vw;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.17);
+    padding: 2vmax;
+    color: rgba(0, 0, 0, 0.678);
+    font: 500 2vmax "Roboto";
+    text-align: center;
+}
+.productPageContent{
+    display: flex;
+    align-items: flex-start;
+}
+.filterBox{
+    flex:1;
+    padding: 3vmax;
+    display: flex;
+    flex-direction: column;
+}
+.products{
+    flex: 6;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5vmax;
+    justify-content: center;
+    font: 600 1.4vmax "Roboto";
+
+}
+
+.paginationBox{
+    display: flex;
+    justify-content: center;
+    margin: 6vmax;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+.page-item{
+    background-color: rgb(255, 255, 255);
+    list-style: none;
+    border: 1px solid rgba(0, 0, 0, 0.178);
+    padding: 1vmax 1.5vmax;
+    transition: all 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page-item:first-child{
+    border-radius: 5px 0 0 5px;
+}
+.page-item:last-child{
+    border-radius: 0 5px 5px 0;
+}
+.page-link{
+    text-decoration: none;
+    font: 300 1vmax "Roboto";
+    color: rgb(80,80,80);
+    transition: all 0.3s;
+}
+.page-item:hover{
+    background-color: rgb(230,230,230);
+}
+.page-item:hover .page-link{
+    color: rgb(0,0,0);
+}
+.pageItemActive{
+    background-color: tomato;
+}
+.pageItemActive:hover{
+    background-color: tomato;
+}
+.pageLinkActive{
+    color: white;
+}
+.pageItemActive:hover .pageLinkActive{
+    color: white;
+}
+
+
+
+.categoryBox{
+    padding: 0;
+}
+.category-link{
+    list-style: none;
+    color: rgba(0, 0, 0, 0.678);
+    font: 400 1vmax "Roboto";
+    margin: 0.4vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.category-link:hover{
+    color: tomato;
+}
+
+.filter-2 > fieldset{
+    margin-top: 0.7vmax;
+    border: 1px solid rgba(0, 0, 0, 0.361);  
+}
+.filter-3{
+    margin-top: 0.7vmax;
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:600px){
+    .productPageContent{
+        flex-direction: column-reverse;
+        align-items:center;
+    }
+    .filterBox{
+        width: 90vw;
+        align-items: center;
+    }
+    .filter-1{
+        width: 88%;
+        text-align: center;
+    }
+    .filter-1-empty{
+        height: 2vmax; 
+        width: 100%;
+    }
+    .filter-2{
+        width: 70%;
+        text-align: center;
+    }
+    .filter-3{
+        width: 100%;
+        text-align: center;
+        margin-top: 1.9vmax;
+    }
+    .category-link{
+        margin-top: 0.9vmax;
+        font: 400 1.9vmax "Roboto";
+    }
+    .page-link{
+        font: 300 1.7vmax "Roboto";
+    }
+}

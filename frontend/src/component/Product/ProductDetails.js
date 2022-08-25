@@ -8,22 +8,23 @@ import ReactStars from "react-rating-stars-component";
 import ReviewCard from "./ReviewCard.js"
 import Loader from '../layout/Loader/Loader';
 import {useAlert} from "react-alert";
+import MetaData from '../layout/MetaData';
 
-const ProductDetails = ({match}) => {
+const ProductDetails = () => {
 
     const dispatch = useDispatch();
     const alert = useAlert();
 
     const {product, loading, error} = useSelector(state => state.productDetails)
-    const {id} = useParams();
+    const params = useParams();
 
     useEffect(() => {
         if(error){
             alert.error(error);
             dispatch(clearErrors());
         }
-        dispatch(getProductDetails(id))
-    }, [dispatch,id],error,alert);
+        dispatch(getProductDetails(params.id))
+    }, [dispatch,params.id],error,alert);
 
     const options = {
         edit: false,
@@ -39,6 +40,7 @@ const ProductDetails = ({match}) => {
     <Fragment>
         {loading?<Loader/>:(    
             <Fragment>
+            <MetaData title={`${product.name} -- ECOMMERCE`}/>
     <div className='productDetails'>
         <div>
             <Carousel className='carousel'>
